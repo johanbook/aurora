@@ -45,6 +45,7 @@ module.exports = {
     StyleGuideRenderer: getComponent("StyleGuideRenderer.tsx"),
     TableOfContentsRenderer: getComponent("TableOfContentsRenderer.tsx"),
     ToolbarButtonRenderer: getComponent("ToolbarButtonRenderer.tsx"),
+    Wrapper: getComponent("Wrapper.tsx"),
   },
   styleguideDir: "build",
   template: {
