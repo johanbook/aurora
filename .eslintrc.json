@@ -3,6 +3,27 @@
     "eslint:recommended",
     "plugin:react/recommended",
     "plugin:unicorn/all",
-"plugin:react/jsx-runtime"
-  ]
+    "plugin:react/jsx-runtime"
+  ],
+  "env": { "jest/globals": true },
+  "overrides": [
+    {
+      "files": ["*.test.*"],
+      "plugins": ["jest"],
+      "extends": ["plugin:jest/recommended"],
+      "rules": { "jest/prefer-expect-assertions": "off" }
+    }
+  ],
+  "plugins": ["jest"],
+  "rules": {
+    "unicorn/filename-case": [
+      "error",
+      {
+        "cases": {
+          "camelCase": true,
+          "pascalCase": true
+        }
+      }
+    ]
+  }
 }
