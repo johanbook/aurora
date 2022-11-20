@@ -3,9 +3,21 @@ import MuiTextField, {
   Props as MuiTextFieldProps,
 } from "@mui/material/TextField";
 
-export interface Props extends MuiTextFieldProps {}
+export interface Props extends MuiTextFieldProps {
+  onChange: (value: string, event: React.ChangeEvent<HTMLInputElement>) => void;
+}
 
 /** The text field component is for entering textual data (not rich text)*/
-export default function TextField({ ...props }: Props): React.ReactElement {
-  return <MuiTextField fullWidth={true} variant="outlined" {...props} />;
+export default function TextField({
+  onChange,
+  ...props
+}: Props): React.ReactElement {
+  return (
+    <MuiTextField
+      fullWidth={true}
+      onChange={(event) => onChange(event.target.value)}
+      variant="outlined"
+      {...props}
+    />
+  );
 }
