@@ -18,6 +18,12 @@ interface ComponentsListRendererProps extends JssInjectedProps {
   items: Rsg.TOCItem[];
 }
 
+function checkIfIsChild(href: string): boolean {
+  const [_, fragment] = href.split("#");
+  const isChild = fragment.match(/\//g)?.length >= 2;
+  return isChild;
+}
+
 function ComponentsListSectionRenderer({
   classes,
   heading,
@@ -36,8 +42,7 @@ function ComponentsListSectionRenderer({
   const [open, setOpen] =
     tocMode !== "collapse" ? [true, () => {}] : React.useState(!!initialOpen);
 
-  // This is quite hacky. Href wil show as `/#/page/subpage`
-  const isChild = (href as string).match(/\//g)?.length >= 3;
+  const isChild = checkIfIsChild(href);
 
   if (content) {
     return (
