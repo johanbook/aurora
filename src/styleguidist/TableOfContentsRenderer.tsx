@@ -1,12 +1,7 @@
 import React from "react";
-import PropTypes from "prop-types";
-import { Styles } from "jss";
-import Styled, { JssInjectedProps } from "rsg-components/Styled";
-import * as Rsg from "../../../typings";
-
 import TextField from "../components/TextField";
 
-interface TableOfContentsRendererProps extends JssInjectedProps {
+interface TableOfContentsRendererProps {
   children?: React.ReactNode;
   searchTerm: string;
   onSearchTermChange(term: string): void;

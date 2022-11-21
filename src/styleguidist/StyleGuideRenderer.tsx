@@ -1,15 +1,9 @@
 import React from "react";
-import PropTypes from "prop-types";
-import Logo from "rsg-components/Logo";
-import Markdown from "rsg-components/Markdown";
 import Styled, { JssInjectedProps } from "rsg-components/Styled";
 import cx from "clsx";
-import Ribbon from "rsg-components/Ribbon";
-import Version from "rsg-components/Version";
 import * as Rsg from "../../../typings";
-
 import Drawer from "@mui/material/Drawer";
-import List from "@mui/material/List";
+import Logo from "./LogoRenderer";
 
 const styles = ({
   color,
@@ -78,7 +72,7 @@ interface StyleGuideRendererProps extends JssInjectedProps {
 
 export const StyleGuideRenderer: React.FunctionComponent<
   StyleGuideRendererProps
-> = ({ classes, title, version, homepageUrl, children, toc, hasSidebar }) => {
+> = ({ classes, title, children, toc, hasSidebar }) => {
   return (
     <div className={cx(classes.root, hasSidebar && classes.hasSidebar)}>
       <main className={classes.content}>
@@ -93,7 +87,6 @@ export const StyleGuideRenderer: React.FunctionComponent<
           {toc}
         </Drawer>
       )}
-      <Ribbon />
     </div>
   );
 };

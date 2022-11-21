@@ -1,6 +1,6 @@
 import * as React from "react";
 import MuiTypography, {
-  Props as MuiTypographyProps,
+  TypographyProps as MuiTypographyProps,
 } from "@mui/material/Typography";
 
 export interface Props extends MuiTypographyProps {}

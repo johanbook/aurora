@@ -1,5 +1,7 @@
 import * as React from "react";
-import MuiTooltip, { Props as MuiTooltipProps } from "@mui/material/Tooltip";
+import MuiTooltip, {
+  TooltipProps as MuiTooltipProps,
+} from "@mui/material/Tooltip";
 
 export interface Props extends MuiTooltipProps {}
 

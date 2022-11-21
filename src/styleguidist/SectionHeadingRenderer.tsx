@@ -1,5 +1,4 @@
 import React from "react";
-import PropTypes from "prop-types";
 import cx from "clsx";
 import Heading from "rsg-components/Heading";
 import Styled, { JssInjectedProps } from "rsg-components/Styled";
@@ -32,7 +31,6 @@ const styles = ({ color, space }: Rsg.Theme) => ({
 
 interface SectionHeadingRendererProps extends JssInjectedProps {
   children?: React.ReactNode;
-  toolbar?: React.ReactNode;
   id: string;
   href?: string;
   depth: number;
@@ -41,7 +39,7 @@ interface SectionHeadingRendererProps extends JssInjectedProps {
 
 const SectionHeadingRenderer: React.FunctionComponent<
   SectionHeadingRendererProps
-> = ({ classes, children, toolbar, id, href, depth, deprecated }) => {
+> = ({ classes, children, id, href, depth, deprecated }) => {
   const headingLevel = Math.min(6, depth);
   const sectionNameClasses = cx(classes.sectionName, {
     [classes.isDeprecated]: deprecated,

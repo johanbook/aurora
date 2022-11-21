@@ -1,32 +1,23 @@
 import React from "react";
-import PropTypes from "prop-types";
-import cx from "clsx";
-import Link from "rsg-components/Link";
-import Styled, { JssInjectedProps } from "rsg-components/Styled";
-import { useStyleGuideContext } from "rsg-components/Context";
-import * as Rsg from "../../../typings";
 import ExpandMoreIcon from "@mui/icons-material/ExpandMore";
 import ExpandLessIcon from "@mui/icons-material/ExpandLess";
-
 import Collapse from "@mui/material/Collapse";
 import ListItemButton from "@mui/material/ListItemButton";
 import ListItemText from "@mui/material/ListItemText";
 import List from "@mui/material/List";
 import ListItemIcon from "@mui/material/ListItemIcon";
 
-interface ComponentsListRendererProps extends JssInjectedProps {
+interface ComponentsListRendererProps {
   items: Rsg.TOCItem[];
 }
 
 function checkIfIsChild(href: string): boolean {
-  const [_, fragment] = href.split("#");
+  const fragment = href.split("#")[1];
   const isChild = fragment.match(/\//g)?.length >= 2;
   return isChild;
 }
 
 function ComponentsListSectionRenderer({
-  classes,
-  heading,
   visibleName,
   href,
   content,
@@ -34,14 +25,8 @@ function ComponentsListSectionRenderer({
   selected,
   initialOpen,
   forcedOpen,
-}) {
-  const {
-    config: { tocMode },
-  } = useStyleGuideContext();
-
-  const [open, setOpen] =
-    tocMode !== "collapse" ? [true, () => {}] : React.useState(!!initialOpen);
-
+}: Rsg.TOCItem) {
+  const [open, setOpen] = React.useState(!!initialOpen);
   const isChild = checkIfIsChild(href);
 
   if (content) {
@@ -78,7 +63,9 @@ function ComponentsListSectionRenderer({
   );
 }
 
-export default function ComponentsListRenderer({ items }) {
+export default function ComponentsListRenderer({
+  items,
+}: ComponentsListRendererProps) {
   return (
     <List>
       {items.map((item) => (

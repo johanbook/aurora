@@ -1,5 +1,5 @@
 import Skeleton from ".";
-import { render, screen } from "../../test";
+import { render } from "../../test";
 
 describe("Skeleton", () => {
   it("works", () => {
