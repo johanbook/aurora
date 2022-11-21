@@ -29,7 +29,7 @@ Read the [contribution guide](./CONTRIBUTING.md).
 
 ## Changelog
 
-To be added.
+The changelog can be found [here](./CHANGELOG.md).
 
 ## Security
 
