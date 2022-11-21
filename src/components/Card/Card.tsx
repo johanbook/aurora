@@ -1,5 +1,5 @@
 import * as React from "react";
-import MuiCard, { Props as MuiCardProps } from "@mui/material/Card";
+import MuiCard, { CardProps as MuiCardProps } from "@mui/material/Card";
 import CardContent from "@mui/material/CardContent";
 
 export interface Props extends MuiCardProps {}

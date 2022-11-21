@@ -1,6 +1,6 @@
 import * as React from "react";
 import MuiTextField, {
-  Props as MuiTextFieldProps,
+  TextFieldProps as MuiTextFieldProps,
 } from "@mui/material/TextField";
 
 export interface Props extends MuiTextFieldProps {
@@ -15,7 +15,7 @@ export default function TextField({
   return (
     <MuiTextField
       fullWidth={true}
-      onChange={(event) => onChange(event.target.value)}
+      onChange={(event) => onChange(event.target.value, event)}
       variant="outlined"
       {...props}
     />

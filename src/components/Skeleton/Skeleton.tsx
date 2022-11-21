@@ -1,5 +1,7 @@
 import * as React from "react";
-import MuiSkeleton, { Props as MuiSkeletonProps } from "@mui/material/Skeleton";
+import MuiSkeleton, {
+  SkeletonProps as MuiSkeletonProps,
+} from "@mui/material/Skeleton";
 
 export interface Props extends MuiSkeletonProps {}
 

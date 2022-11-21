@@ -1,5 +1,5 @@
 import * as React from "react";
-import MuiButton, { Props as MuiButtonProps } from "@mui/material/Button";
+import MuiButton, { ButtonProps as MuiButtonProps } from "@mui/material/Button";
 
 export interface Props extends MuiButtonProps {}
 

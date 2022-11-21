@@ -1,5 +1,5 @@
 import * as React from "react";
-import MuiSlider, { Props as MuiSliderProps } from "@mui/material/Slider";
+import MuiSlider, { SliderProps as MuiSliderProps } from "@mui/material/Slider";
 
 export interface Props extends MuiSliderProps {}
 
