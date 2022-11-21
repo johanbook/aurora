@@ -1,8 +1,10 @@
-import TextField from ".";
-import { render } from "../../test";
+import Typography from ".";
+import { render, screen } from "../../test";
 
-describe("TextField", () => {
+describe("Typography", () => {
   it("works", () => {
-    render(<TextField />);
+    render(<Typography>my-text</Typography>);
+    const text = screen.getByText(/my-text/);
+    expect(text).toBeInTheDocument();
   });
 });
