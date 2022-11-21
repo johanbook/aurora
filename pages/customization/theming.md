@@ -1,4 +1,4 @@
-Aurora supports injecting your own custom theme
+Aurora supports creating your own custom theme
 
 ```tsx static
 import { createTheme, ThemeProvider } from "@johanbook/aurora/theme";

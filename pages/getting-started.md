@@ -1,4 +1,4 @@
-It is easy to get started with Aurora
+Aurora is meant to be plug-and-play.
 
 ## Installation
 
