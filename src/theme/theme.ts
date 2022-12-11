@@ -2,16 +2,17 @@ import { createTheme as createMuiTheme } from "@mui/material/styles";
 import PALLETE from "./palette";
 
 export function createTheme() {
+  const palette = PALLETE["neon"];
   return createMuiTheme({
     palette: {
       error: {
-        main: PALLETE.red,
+        main: palette.error,
       },
       primary: {
-        main: PALLETE.blue,
+        main: palette.primary,
       },
       success: {
-        main: PALLETE.green,
+        main: palette.success,
       },
     },
   });
